@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DemNgayApp</string>
+    <string-array name="setting_array">
+        <item>Đổi ảnh nền</item>
+        <item>Đổi tên bạn nam</item>
+        <item>Đổi tên bạn nữ</item>
+    </string-array>
+</resources>

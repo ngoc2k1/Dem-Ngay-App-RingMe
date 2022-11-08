@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".SplashActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_images"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/background"
+                app:layout_constraintBottom_toTopOf="@id/ci_images"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <me.relex.circleindicator.CircleIndicator3
+                android:id="@+id/ci_images"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                app:ci_drawable="@drawable/ic_heart_full"
+                app:ci_drawable_unselected="@drawable/ic_heart"
+                app:ci_height="20dp"
+                app:ci_width="20dp"
+                app:layout_constraintBottom_toTopOf="@id/ed_nameMale" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_goToMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/pink"
+                android:text="Let's go!"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/ed_nameMale"
+                style="@style/FORMAT_TEXT"
+                android:hint="Enter name male"
+                app:layout_constraintBottom_toTopOf="@id/ed_dobMale"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/ed_dobMale"
+                style="@style/FORMAT_TEXT"
+                android:hint="Enter date of birth male:dd/MM/yyyy"
+                app:layout_constraintBottom_toTopOf="@id/ed_nameFemale"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/ed_nameFemale"
+                style="@style/FORMAT_TEXT"
+                android:hint="Enter name female"
+                app:layout_constraintBottom_toTopOf="@id/ed_dobFemale"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/ed_dobFemale"
+                style="@style/FORMAT_TEXT"
+                android:hint="Enter date of birth female:dd/MM/yyyy"
+                app:layout_constraintBottom_toTopOf="@id/ed_startDate"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/ed_startDate"
+                style="@style/FORMAT_TEXT"
+                android:hint="Enter start date:dd/MM/yyyy"
+                app:layout_constraintBottom_toTopOf="@id/bt_goToMain"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

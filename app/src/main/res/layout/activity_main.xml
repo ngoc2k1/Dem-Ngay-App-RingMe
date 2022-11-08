@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_app"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lobster_regular"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Been Love Memory Lite" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/ib_heart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:src="@drawable/ic_heart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_app" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/ib_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:src="@drawable/ic_menu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ib_menu">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_delete"
+                    style="@style/FORMAT_TEXT"
+                    android:layout_marginBottom="0dp"
+                    android:drawableStart="@drawable/ic_delete"
+                    android:text="Delete" />
+
+                <View
+                    android:layout_width="70dp"
+                    android:layout_height="2dp"
+                    android:background="@color/purple_500" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_edit"
+                    style="@style/FORMAT_TEXT"
+                    android:layout_marginBottom="0dp"
+                    android:drawableStart="@drawable/ic_edit"
+                    android:text="Edit" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <Spinner
+                android:id="@+id/spinner_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/ib_menu"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:fontFamily="@font/fuzzybubbles_bold"
+                android:text="Đang yêu"
+                android:textColor="@color/yellow"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_leftday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lobster_regular"
+                android:text="365"
+                android:textColor="@color/black"
+                android:textSize="36sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_status" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_avatarFemale"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="30dp"
+                android:src="@drawable/background1"
+                app:civ_border_color="@color/orange"
+                app:civ_border_width="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ib_heart" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_avatarMale"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="30dp"
+                android:src="@drawable/background1"
+                app:civ_border_color="@color/orange"
+                app:civ_border_width="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ib_heart" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/ib_smallheart"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:src="@drawable/ic_heart_full"
+                app:layout_constraintBottom_toBottomOf="@id/iv_avatarMale"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_avatarMale" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_nameMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_heart_full"
+                android:fontFamily="@font/fuzzybubbles_bold"
+                android:text="Gấu"
+                android:textColor="@color/orange"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="@id/iv_avatarMale"
+                app:layout_constraintStart_toStartOf="@id/iv_avatarMale"
+                app:layout_constraintTop_toBottomOf="@id/iv_avatarMale" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_nameFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_heart_full"
+                android:fontFamily="@font/fuzzybubbles_bold"
+                android:text="Kem"
+                android:textColor="@color/orange"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="@id/iv_avatarFemale"
+                app:layout_constraintStart_toStartOf="@id/iv_avatarFemale"
+                app:layout_constraintTop_toBottomOf="@id/iv_avatarFemale" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/tv_nameFemale"
+                app:layout_constraintStart_toStartOf="@id/tv_nameFemale"
+                app:layout_constraintTop_toBottomOf="@id/tv_nameFemale">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_ageFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_textview"
+                    android:drawableStart="@drawable/ic_gender_female"
+                    android:fontFamily="@font/fuzzybubbles_bold"
+                    android:padding="2dp"
+                    android:text="23"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_zodiacFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/background_textview"
+                    android:backgroundTint="@color/orange"
+                    android:fontFamily="@font/fuzzybubbles_bold"
+                    android:padding="2dp"
+                    android:text="Aquarius"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/tv_nameMale"
+                app:layout_constraintStart_toStartOf="@id/tv_nameMale"
+                app:layout_constraintTop_toBottomOf="@id/tv_nameMale">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_ageMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_textview"
+                    android:drawableStart="@drawable/ic_gender_male"
+                    android:fontFamily="@font/fuzzybubbles_bold"
+                    android:padding="2dp"
+                    android:text="23"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_zodiacMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/background_textview"
+                    android:backgroundTint="@color/orange"
+                    android:fontFamily="@font/fuzzybubbles_bold"
+                    android:padding="2dp"
+                    android:text="Aquarius"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/purple_200"
+                android:orientation="vertical"
+                android:paddingHorizontal="8dp"
+                app:layout_constraintTop_toBottomOf="@id/ll_male">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_titleTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/lobster_regular"
+                    android:text="Đồng hồ Been Love Memory"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/white"
+                    app:layout_constraintTop_toBottomOf="@id/tv_titleTime" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:weightSum="7">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_heart_time"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        app:fontFamily="@font/fuzzybubbles_regular" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_heart_time"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        app:fontFamily="@font/fuzzybubbles_regular" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_heart_time"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        app:fontFamily="@font/fuzzybubbles_regular" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_hour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_heart_time"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/white"
+                        app:fontFamily="@font/fuzzybubbles_regular" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_minute"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_heart_time"
+                        android:gravity="center"
+                        android:text="10"
+                        android:textColor="@color/white"
+                        app:fontFamily="@font/fuzzybubbles_regular" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_second"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_heart_time"
+                        android:gravity="center"
+                        android:text="14"
+                        android:textColor="@color/white"
+                        app:fontFamily="@font/fuzzybubbles_regular" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal"
+                    android:weightSum="7">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/fuzzybubbles_regular"
+                        android:gravity="center"
+                        android:text="Năm"
+                        android:textColor="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/fuzzybubbles_regular"
+                        android:gravity="center"
+                        android:text="Tháng"
+                        android:textColor="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/fuzzybubbles_regular"
+                        android:gravity="center"
+                        android:text="Ngày"
+                        android:textColor="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/fuzzybubbles_regular"
+                        android:gravity="center"
+                        android:text="Giờ"
+                        android:textColor="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/fuzzybubbles_regular"
+                        android:gravity="center"
+                        android:text="Phút"
+                        android:textColor="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/fuzzybubbles_regular"
+                        android:gravity="center"
+                        android:text="Giây"
+                        android:textColor="@color/white" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_startDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:drawableStart="@drawable/ic_heart_full"
+                    android:drawableEnd="@drawable/ic_heart_full"
+                    android:fontFamily="@font/lobster_regular"
+                    android:text="15/09/2022"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

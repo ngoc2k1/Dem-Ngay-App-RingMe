@@ -3,6 +3,7 @@ package com.bichngoc.demngayapp
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bichngoc.demngayapp.databinding.ActivitySplashBinding
 import com.bichngoc.demngayapp.room.UserDB
@@ -15,6 +16,7 @@ import kotlinx.coroutines.launch
 class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding
     private var checked = 0
+    val myViewModel: MViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
@@ -56,19 +58,14 @@ class SplashActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+
     private fun storeUserInDatabase(user: UserDB) {
         CoroutineScope(Dispatchers.IO).launch {
             if (checked == 1) {
                 UserDatabase.getInstance(applicationContext).userDAO().updateUser(user)
-                Log.d(
-                    "db_user", "onCreate: Splash: user update"
-                )
             } else {
                 UserDatabase.getInstance(applicationContext).userDAO().deleteUser()
                 UserDatabase.getInstance(applicationContext).userDAO().insertUser(user)
-                Log.d(
-                    "db_user", "onCreate: Splash: user insert"
-                )
             }
         }
     }
